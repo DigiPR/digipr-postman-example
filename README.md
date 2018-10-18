@@ -18,7 +18,7 @@ You can download Postman from here: https://www.getpostman.com/apps
 The only task in this little example is to call the following `Echo-Endpoint` with the help of Postman:
 
 ### Echo-Endpoint
-**URL**: [`https://www.putsreq.com/AnfG0hKuA9sNHqEIp6hf`](https://www.putsreq.com/AnfG0hKuA9sNHqEIp6hf) 
+**URL**: [`https://www.putsreq.com/tYQr1JuRPp8xsVsRuv8u`](https://www.putsreq.com/tYQr1JuRPp8xsVsRuv8u) 
 
 **Method:** `POST`
 
