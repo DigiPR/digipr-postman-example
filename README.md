@@ -18,7 +18,7 @@ You can download Postman from here: https://www.getpostman.com/apps
 The only task in this little example is to call the following `Echo-Endpoint` with the help of Postman:
 
 ### Echo-Endpoint
-**URL**: [`https://www.putsreq.com/tYQr1JuRPp8xsVsRuv8u`](https://www.putsreq.com/tYQr1JuRPp8xsVsRuv8u) 
+**URL**: [`https://www.putsreq.com/tGemy9dwjunY1e19JcLt`](https://www.putsreq.com/tGemy9dwjunY1e19JcLt) 
 
 **Method:** `POST`
 
@@ -55,20 +55,25 @@ The only task in this little example is to call the following `Echo-Endpoint` wi
 You may create an own version of the Echo-Endpoint on [PutsReq](https://www.putsreq.com) using the following script:
 
 ```JavaScript
-const parsedBody = JSON.parse(request.body);
-    
-// Build a response
-if (parsedBody.variableA && parsedBody.variableB) {
-    response.status = 200;
-    response.headers['Content-Type'] = 'application/json';
-    response.body = {
-        variableA: parsedBody.variableA + " ECHO!!!",
-        variableB: parsedBody.variableB  + " ECHO!!!",
-        businessKey: parsedBody.businessKey // optional
-    };
+if (response.headers!='application/json') {
+        response.status = 404;
+        response.headers = {};
+        response.body = 'no JSON body';
 } else {
-    response.status = 404;
-    response.headers = {};
-    response.body = 'not found';
+    parsedBody = JSON.parse(request.body);
+        
+    if (parsedBody.variableA && parsedBody.variableB) {
+        response.status = 200;
+        response.headers['Content-Type'] = 'application/json';
+        response.body = {
+            variableA: parsedBody.variableA + " ECHO!!!",
+            variableB: parsedBody.variableB  + " ECHO!!!",
+            businessKey: parsedBody.businessKey // optional
+        };
+    } else {
+        response.status = 404;
+        response.headers = {};
+        response.body = 'not found';
+    }
 }
 ```
