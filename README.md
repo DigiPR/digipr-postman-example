@@ -55,7 +55,7 @@ The only task in this little example is to call the following `Echo-Endpoint` wi
 You may create an own version of the Echo-Endpoint on [PutsReq](https://www.putsreq.com) using the following script:
 
 ```JavaScript
-if (response.headers!='application/json') {
+if (request.headers['CONTENT-TYPE']!='application/json') {
         response.status = 404;
         response.headers = {};
         response.body = 'no JSON body';
