@@ -44,7 +44,7 @@ The only task in this little example is to call the following `Echo-Endpoint` wi
 }
 ```
 
-**Error Response** • *Code:* `404 UNAUTHORIZED`
+**Error Response** • *Code:* `404 NOT FOUND`
 
 > Try to figure out how this information can be used to call the `Echo-Endpoint` in Postman.
 
